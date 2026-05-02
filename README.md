@@ -76,7 +76,6 @@ This project was developed as part of **B.Tech 2nd Semester (Python Programming)
 
   * Lists
   * Dictionaries
-  * Tuples
   * Sets
 
 ❌ No external libraries used

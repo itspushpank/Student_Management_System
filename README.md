@@ -5,6 +5,8 @@
 This is a **menu-driven Student Management System** built using **Python**.
 The program allows users to manage student records, including personal details, courses, marks, and grades.
 
+🆕 Now the project also includes **file handling**, which allows data to be **saved permanently** and **loaded automatically** when the program starts.
+
 This project was developed as part of **B.Tech 2nd Semester (Python Programming)**.
 
 ---
@@ -21,6 +23,8 @@ This project was developed as part of **B.Tech 2nd Semester (Python Programming)
   * Semester
   * Courses enrolled
 
+---
+
 ### ✅ 2. Record Marks
 
 * Enter marks for each course (0–100)
@@ -28,6 +32,8 @@ This project was developed as part of **B.Tech 2nd Semester (Python Programming)
 
   * Average marks
   * Grade (A+, A, B+, etc.)
+
+---
 
 ### ✅ 3. Display All Students
 
@@ -40,6 +46,8 @@ This project was developed as part of **B.Tech 2nd Semester (Python Programming)
   * Average
   * Grade
 
+---
+
 ### ✅ 4. Display Individual Student
 
 * Search by roll number
@@ -49,6 +57,8 @@ This project was developed as part of **B.Tech 2nd Semester (Python Programming)
   * Courses + marks
   * Average + grade
 
+---
+
 ### ✅ 5. Update Student Information
 
 * Update:
@@ -57,10 +67,14 @@ This project was developed as part of **B.Tech 2nd Semester (Python Programming)
   * Add/remove courses
   * Update marks
 
+---
+
 ### ✅ 6. Delete Student Record
 
 * Delete student by roll number
 * Confirmation before deletion
+
+---
 
 ### ✅ 7. Search by Branch
 
@@ -69,13 +83,26 @@ This project was developed as part of **B.Tech 2nd Semester (Python Programming)
 
 ---
 
+### 🆕 8. Persistent Data Storage (File Handling)
+
+* Data is stored in **`students.txt`**
+* Uses **JSON format internally**
+* Features:
+
+  * Saves data automatically after changes
+  * Loads existing data on program start
+  * Prevents data loss after program exit
+
+---
+
 ## 🛠️ Technologies Used
 
 * Python (Core concepts only)
+* File Handling (read/write)
 * Data Structures:
 
-  * Lists
   * Dictionaries
+  * Lists
   * Sets
 
 ❌ No external libraries used
@@ -92,6 +119,30 @@ students = {
         "semester": "",
         "courses": [],
         "marks": {}
+    }
+}
+```
+
+---
+
+## 💾 File Storage Format
+
+Data is stored in a file:
+
+```
+students.txt
+```
+
+Example format inside file:
+
+```json
+{
+    "2023001": {
+        "name": "Rahul Sharma",
+        "branch": "CSE",
+        "semester": "2",
+        "courses": ["Maths", "Python"],
+        "marks": {"Maths": 85, "Python": 90}
     }
 }
 ```
@@ -142,7 +193,7 @@ python code.py
 * Marks must be between 0–100
 * Student existence validation
 * Menu input validation
-* Error handling for invalid inputs
+* File read/write error handling
 
 ---
 
@@ -155,12 +206,13 @@ Add screenshots of:
 * Display table
 * Search & update
 * Delete operation
+* File persistence (before/after restart)
 
 ---
 
 ## 👨‍💻 Author
 
-* Name: Pushpank kumar
+* Name: Pushpank Kumar
 * Course: B.Tech (2nd Semester)
 * Subject: Python Programming
 
@@ -172,6 +224,7 @@ Add screenshots of:
 * Clean and formatted output
 * Beginner-friendly logic
 * Fully menu-driven CLI application
+* 💡 Data persists even after program termination
 
 ---
 

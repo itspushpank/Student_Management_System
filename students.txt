@@ -1,1 +1,21 @@
-{}
+{
+    "35": {
+        "name": "Pushpank kumar",
+        "branch": "cse",
+        "semester": "2",
+        "courses": [
+            "maths",
+            "python",
+            "webdev",
+            "english"
+        ],
+        "grade": "A+",
+        "average": 96.5,
+        "marks": {
+            "maths": 90,
+            "python": 99,
+            "webdev": 99,
+            "english": 98
+        }
+    }
+}

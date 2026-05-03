@@ -1,4 +1,19 @@
+import json
 data={}
+def load_data():
+    try:
+        with open("students.txt", "r") as file:
+            return json.load(file)
+    except:
+        return {}
+
+data= load_data()
+
+def save_data(data):
+    with open("students.txt", "w") as file:
+        json.dump(data, file, indent=4)
+
+
 
 def rollValidation():
     while True:
@@ -22,6 +37,7 @@ def updater(roll):
     data[roll]["average"]=sum(lst)/len(lst)
     grade="A+" if 100>=data[roll]["average"]>=90 else "A" if 90>data[roll]["average"]>=80 else "B+" if 80>data[roll]["average"]>=70 else "B" if 70>data[roll]["average"]>=60 else "C" if 60>data[roll]["average"]>=50 else "D" if 50>data[roll]["average"]>=40 else "F"
     data[roll]["grade"]=grade
+    save_data(data)
 
 def marksValidation(roll):
     
@@ -41,6 +57,7 @@ def addStudent(roll):
     data[roll]["average"]=None
     print("\nStudent added successfully!")
     print("\n")
+    save_data(data)
 
 def recordMarks(roll):
     # roll=input("Enter the Roll Number: ")
@@ -72,6 +89,7 @@ def recordMarks(roll):
     print(f"Average: {data[roll]["average"]:.2f}%")
     print(f"Grade: {grade}")
     print("\n")
+    save_data(data)
             
 
     
@@ -182,6 +200,7 @@ def updateStudent(roll):
         case _:
             print("Invalid Choice ")
             print("Update Not Successful!")
+    save_data(data)
 
 def deleteStudent(roll):
     print(f"Student: {data[roll]["name"]}")
@@ -191,6 +210,7 @@ def deleteStudent(roll):
         print("Student deleted successfully!")
     else:
         print("Cancelled!!!")
+    save_data(data)
     
 
 def searchBYbranch():

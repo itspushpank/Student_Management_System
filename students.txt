@@ -6,15 +6,13 @@
         "courses": [
             "maths",
             "python",
-            "webdev",
             "english"
         ],
         "grade": "A+",
-        "average": 96.5,
+        "average": 95.66666666666667,
         "marks": {
             "maths": 90,
             "python": 99,
-            "webdev": 99,
             "english": 98
         }
     }

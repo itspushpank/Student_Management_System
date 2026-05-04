@@ -37,7 +37,7 @@ def updater(roll):
     data[roll]["average"]=sum(lst)/len(lst)
     grade="A+" if 100>=data[roll]["average"]>=90 else "A" if 90>data[roll]["average"]>=80 else "B+" if 80>data[roll]["average"]>=70 else "B" if 70>data[roll]["average"]>=60 else "C" if 60>data[roll]["average"]>=50 else "D" if 50>data[roll]["average"]>=40 else "F"
     data[roll]["grade"]=grade
-    save_data(data)
+    
 
 def marksValidation(roll):
     
@@ -57,7 +57,7 @@ def addStudent(roll):
     data[roll]["average"]=None
     print("\nStudent added successfully!")
     print("\n")
-    save_data(data)
+    
 
 def recordMarks(roll):
     # roll=input("Enter the Roll Number: ")
@@ -89,7 +89,7 @@ def recordMarks(roll):
     print(f"Average: {data[roll]["average"]:.2f}%")
     print(f"Grade: {grade}")
     print("\n")
-    save_data(data)
+    
             
 
     
@@ -124,6 +124,8 @@ def displayIndividualStudent(roll):
     
 
 def updateStudent(roll):
+
+    print(f"\nStudent: {data[roll]["name"]}\n")
     print("\nWhat do you want to update?")
     print("1. Name")
     print("2. Branch")
@@ -143,7 +145,7 @@ def updateStudent(roll):
             data[roll]["semester"]=input("Enter new semester: ")
             print("Updated Successfully!")
         case '4':
-            x=input("Enter new course to be added: ")
+            x=input("Enter new course to be added: ").strip()
             data[roll]["courses"].append(x)
             data[roll]["marks"][x]=None
             print("Updated Successfully!")
@@ -153,13 +155,17 @@ def updateStudent(roll):
             for i in data[roll]["courses"]:
                 count+=1
                 print(f"{count}. {i}")
-            r=int(input("\nEnter the position of the course that you want to remove : "))
-            z=data[roll]["courses"].pop(r-1)
-            data[roll]["marks"].pop(z)
-            print("Updated Successfully!")
-            updater(roll)
+            try:
+                r=int(input(f"\nEnter the position of the course that you want to remove (1-{count}) : "))
+                z=data[roll]["courses"].pop(r-1)
+                data[roll]["marks"].pop(z)
+                print(f"\nThe course '{z}' is Successfully removed!\n")
+                print("Updated Successfully!")
+                updater(roll)
+            except:
+                print("Invalid choice! Enter a valid choice! ")
         case '6':
-            print("Select to course of which you want to Update marks.\n")
+            print("====== Update marks======\n")
             c=0
             for ky,vl in data[roll]["marks"].items():
                 c+=1
@@ -200,7 +206,7 @@ def updateStudent(roll):
         case _:
             print("Invalid Choice ")
             print("Update Not Successful!")
-    save_data(data)
+    
 
 def deleteStudent(roll):
     print(f"Student: {data[roll]["name"]}")
@@ -210,7 +216,7 @@ def deleteStudent(roll):
         print("Student deleted successfully!")
     else:
         print("Cancelled!!!")
-    save_data(data)
+    
     
 
 def searchBYbranch():
@@ -263,6 +269,7 @@ while True:
             searchBYbranch()
         case '8':
             print("====Thanks for using Student management System====")
+            save_data(data)
             break
         case _:
             print("====Invalid choice====\n====Please enter a valid Choice (1-8)====\n")

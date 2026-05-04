@@ -100,11 +100,11 @@ def displayAllStudent():
     print(f"| {'Roll No.':<12}| {'Name':<25}| {'Branch':<25}|{'Average':^9}|{'Grade':^7}|")
     print("-"*87)
     for i in data.keys():
-        # test=str(round(data[i]["average"],2)) +"%"
+        test=round(data[i]["average"],2)
         if data[i]["average"]==None and data[i]["grade"]==None:
             print(f"| {i:<12}| {data[i]["name"]:<25}| {data[i]["branch"]:<25}|{"----":^9}|{"----":^7}|")
         else:
-            print(f"| {i:<12}| {data[i]["name"]:<25}| {data[i]["branch"]:<25}|{data[i]["average"]:^9}|{data[i]["grade"]:^7}|")
+            print(f"| {i:<12}| {data[i]["name"]:<25}| {data[i]["branch"]:<25}|{test:^9}|{data[i]["grade"]:^7}|")
         print("-"*87)
     print("\n")
 

@@ -39,20 +39,13 @@ def updater(roll):
     data[roll]["grade"]=grade
     
 
-def marksValidation(roll):
-    
-    pass
-
 def addStudent(roll):
-    # roll=int(input("Enter the Roll Number: "))
     data[roll]={}
     data[roll]["name"]=input("\nEnter Name: ").strip()
     data[roll]["branch"]=input("Enter Branch: ").strip()
     data[roll]["semester"]=input("Enter Semester: ").strip()
     listo=input("Enter courses (comma-separated): ").split(",")
-    # data[roll]["courses"]=input("Enter courses (comma-separated): ").split(",")
     data[roll]["courses"]=[x.strip() for x in listo]
-    # print(data[roll]["courses"])
     data[roll]["grade"]=None
     data[roll]["average"]=None
     print("\nStudent added successfully!")
@@ -60,11 +53,9 @@ def addStudent(roll):
     
 
 def recordMarks(roll):
-    # roll=input("Enter the Roll Number: ")
     print(f"\nStudent: {data[roll]["name"]}\n")
 
     data[roll]["marks"]={}
-    some=list(data[roll]["courses"])
     lst=[]
     while True:
         try:           
@@ -79,7 +70,7 @@ def recordMarks(roll):
                         print("Enter a Number Between (0-100)")
             data[roll]["marks"]=dict(zip(data[roll]["courses"],lst))
             data[roll]["average"]=sum(lst)/len(lst)
-            # print(data[roll]["courses"])
+
             break
         except:
             print("Invalid Input!\n Please enter an Integer marks between (0-100)")

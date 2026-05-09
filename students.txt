@@ -1,0 +1,118 @@
+{
+    "1": {
+        "name": "Pushpank kumar",
+        "branch": "cse",
+        "semester": "1",
+        "courses": [
+            "maths",
+            "python",
+            "webdev",
+            "english"
+        ],
+        "grade": "A+",
+        "average": 96.0,
+        "marks": {
+            "maths": 90,
+            "python": 99,
+            "webdev": 98,
+            "english": 97
+        }
+    },
+    "2": {
+        "name": "Rahul kumar",
+        "branch": "cse",
+        "semester": "2",
+        "courses": [
+            "maths",
+            "python",
+            "webdev",
+            "english"
+        ],
+        "grade": "A+",
+        "average": 95.25,
+        "marks": {
+            "maths": 90,
+            "python": 98,
+            "webdev": 97,
+            "english": 96
+        }
+    },
+    "3": {
+        "name": "Arnav Bharti",
+        "branch": "cse",
+        "semester": "2",
+        "courses": [
+            "maths",
+            "python",
+            "webdev",
+            "english"
+        ],
+        "grade": "A+",
+        "average": 91.25,
+        "marks": {
+            "maths": 98,
+            "python": 78,
+            "webdev": 90,
+            "english": 99
+        }
+    },
+    "4": {
+        "name": "Manan Kashyap",
+        "branch": "eee",
+        "semester": "2",
+        "courses": [
+            "maths",
+            "python",
+            "webdev",
+            "english",
+            "bee"
+        ],
+        "grade": "A",
+        "average": 87.2,
+        "marks": {
+            "maths": 90,
+            "python": 89,
+            "webdev": 87,
+            "english": 80,
+            "bee": 90
+        }
+    },
+    "5": {
+        "name": "Himanshu Saurav",
+        "branch": "cse",
+        "semester": "3",
+        "courses": [
+            "maths",
+            "python",
+            "webdev",
+            "english"
+        ],
+        "grade": "A+",
+        "average": 98.0,
+        "marks": {
+            "maths": 99,
+            "python": 98,
+            "webdev": 97,
+            "english": 98
+        }
+    },
+    "6": {
+        "name": "Beer Bhardhan",
+        "branch": "civil",
+        "semester": "3",
+        "courses": [
+            "maths",
+            "python",
+            "webdev",
+            "english"
+        ],
+        "grade": "A",
+        "average": 83.25,
+        "marks": {
+            "maths": 90,
+            "python": 98,
+            "webdev": 67,
+            "english": 78
+        }
+    }
+}

@@ -211,7 +211,7 @@ def deleteStudent(roll):
     
 
 def searchBYbranch():
-    branch=input("Enter Branch: ")
+    branch=input("Enter Branch: ").strip()
     print("-"*60)
     print(f"| {'Roll No.':<12}| {'Name':<25}|{'Average':^9}|{'Grade':^7}|")
     print("-"*60)

@@ -56,24 +56,22 @@ def recordMarks(roll):
     print(f"\nStudent: {data[roll]["name"]}\n")
 
     data[roll]["marks"]={}
-    lst=[]
-    while True:
-        try:           
-            for i in data[roll]["courses"]:
-                x=True
-                while x:
-                    j=int(input(f"Enter marks for {i}:"))
-                    if 0<=j<=100:
-                        lst.append(j)
-                        x=False
-                    else:
-                        print("Enter a Number Between (0-100)")
-            data[roll]["marks"]=dict(zip(data[roll]["courses"],lst))
-            data[roll]["average"]=sum(lst)/len(lst)
 
-            break
-        except:
-            print("Invalid Input!\n Please enter an Integer marks between (0-100)")
+    for i in data[roll]["courses"]:
+        while True:
+            try:
+                j=int(input(f"Enter marks for {i} :"))
+                if 0<=j<=100:
+                    data[roll]["marks"][i]=j
+                    break
+                else:
+                    print("Invalid Input! Enter a Number Between (0-100)")
+            except:
+                print("Invalid input! Enter a integer btw (0-100)")
+    
+    lst=list(data[roll]["marks"].values())
+    data[roll]["average"]=sum(lst)/len(lst)
+
     grade="A+" if 100>=data[roll]["average"]>=90 else "A" if 90>data[roll]["average"]>=80 else "B+" if 80>data[roll]["average"]>=70 else "B" if 70>data[roll]["average"]>=60 else "C" if 60>data[roll]["average"]>=50 else "D" if 50>data[roll]["average"]>=40 else "F"
     data[roll]["grade"]=grade
     print("\nMarks recorded successfully!\n")
@@ -162,37 +160,24 @@ def updateStudent(roll):
                 c+=1
                 print(f"{c}. {ky:<10} : {vl}")
             upsub=input("Enter the name of course of which you want to Update marks  :").strip()
-            # print(data[roll]["courses"])
-            # if upsub in list(data[roll]["marks"].keys()):
+
             if upsub in data[roll]["courses"]:
-                x=True
-                while x:
-                    try:        
-                        while x:
-                            j=int(input(f"Enter marks for {upsub}:"))
-                            if 0<=j<=100:
-                                data[roll]["marks"][upsub]=j
-                                x=False
-                            else:
-                                print("Enter a Number Between (0-100)")
+                
+                while True:
+                    try:                               
+                        j=int(input(f"Enter marks for {upsub}:"))
+                        if 0<=j<=100:
+                            data[roll]["marks"][upsub]=j
+                            print("Updated Successfully!")
+                            break
+                        else:
+                            print("Invalid Input! Enter a Number Between (0-100)")
                     except:
-                        print("Invalid Input!\n Please enter an Integer marks between (0-100)")
+                        print("Invalid Input! Please enter an Integer marks between (0-100)")
             else:
                 print("The Course does not exist!\nEnter a Course that is Opt by the Student!!!")
-            # for k in data[roll]["marks"].keys():
-            #     x=True
-            #     while x:
-            #         try:        
-            #             while x:
-            #                 j=int(input(f"Enter marks for {k}:"))
-            #                 if 0<=j<=100:
-            #                     data[roll]["marks"][k]=j
-            #                     x=False
-            #                 else:
-            #                     print("Enter a Number Between (0-100)")
-            #         except:
-            #             print("Invalid Input!\n Please enter an Integer marks between (0-100)")
-            print("Updated Successfully!")
+                print("Update Not Successful!")
+  
             updater(roll)
         case _:
             print("Invalid Choice ")
